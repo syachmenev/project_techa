@@ -104,6 +104,10 @@ a {
   background-color: chocolate;
 }
 
+.main {
+  max-width: 1400px;
+  width: 100%;
+}
 
 /* about-foto */
 
