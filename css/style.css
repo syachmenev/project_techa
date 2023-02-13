@@ -62,6 +62,8 @@ a {
   display: flex;
   gap: 35px;
   margin-left: 100px;
+  animation-name: nav;
+  animation-duration: 4s;
 }
 
 .navigation-item {
@@ -78,6 +80,10 @@ a {
   padding: 10px;
 }
 
+.navigation-link_dropper {
+  font-size: 18px;
+}
+
 .navigation-list_drop {
   display: none;
   position: absolute;
@@ -92,6 +98,9 @@ a {
 
 .navigation-item_dropper {
   border-bottom: 1px solid #000;
+  font-size: 18px;
+  max-width: 100%;
+  width: 200px;
 }
 
 .navigation-item_dropper:hover {
@@ -107,15 +116,30 @@ a {
 .main {
   max-width: 1400px;
   width: 100%;
+  margin: 0 auto;
 }
 
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 100px;
+}
+
+
 /* about-foto */
+.about-foto-wrap {
+  display: flex;
+  flex-direction: column;
+}
 
 .about-foto {
-  width: 400px;
-  height: 400px;
+  width: 100%;
+  max-width: 400px;
+  /* height: 100%; */
+  max-height: 400px;
   border-radius: 50%;
-  position: absolute;
+  /* position: absolute; */
   top: 350px;
   left: 30px;
   overflow: hidden;
@@ -123,14 +147,19 @@ a {
 
 .about-foto_img {
   display: block;
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
+  width: 100%;
+  height: 100%;
   transition: all .7s ease;
 }
 
 .about-foto_img:hover {
   transform: scale(1.5);
+}
+
+.about-foto-desc {
+  max-width: 400px;
+  width: 100%;
+  text-align: justify;
 }
 
 /* Календарь */
@@ -141,13 +170,14 @@ a {
 .calendar {
   position: absolute;
   top: 800px;
+  display: none;
 }
 
 /* Секция Слайдер */
 
-.fotorama__wrap {
+/* .fotorama__wrap {
   margin: 0 auto;
-}
+} */
 
 /* Ссылки на сервисы */
 
@@ -160,12 +190,12 @@ a {
   justify-content: center;
   /* align-items: center; */
   gap: 15px;
-  width: 400px;
+  width: 230px;
 }
 
 .services-link {
   display: block;
-
+  width: 230px;
 }
 
 .services-img {
@@ -173,10 +203,713 @@ a {
   background-color: dimgrey;
   opacity: .5;
   width: 80%;
+  height: 73px;
   padding: 0 auto;
-
 }
 
 .services-img:hover {
   opacity: 1;
+}
+
+
+
+/* Блок новости */
+
+
+.section-news_title {
+  font-size: 34px;
+  text-align: center;
+}
+
+.news {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  gap: 50px;
+  max-width: 100%;
+  width: 1000px;
+  background-color: #fff;
+  margin-left: auto;
+  margin-bottom: 50px;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 10px;
+  transition: all .6s ease;
+}
+
+.news:hover {
+  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
+  transform: translateY(-5px);
+}
+
+.video {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  max-height: 300px;
+}
+
+.news-desc {
+  max-width: 100%;
+  width: 500px;
+}
+
+.news-date {
+  position: absolute;
+  bottom: 0;
+  right: 8px;
+}
+
+.new-desk_link {
+  display: block;
+  color: #e9a778;
+  transition: all .7s ease;
+}
+
+.new-desk_link:hover {
+  color: #99d01e;
+}
+
+.slider-image {
+  width: 100%;
+}
+
+.fotorama-wrap {
+  width: 500px;
+  max-width: 100%;
+}
+
+/* Блок ОБРАТНАЯ СВЯЗЬ */
+
+.feedback {
+  position: relative;
+  background: url(../images/feedback-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: -60px;
+  /* background-color: #ccc; */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.feedback:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.feedback__text {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  z-index: 1;
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: #fff;
+  padding: 20px;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  transition: all 0.8s ease;
+  z-index: 1;
+}
+
+.feedback-form:hover {
+  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
+  transform: translateX(-5px);
+  background-color: #1d6299;
+}
+
+.feedback-form:hover .btn {
+  background-color: #fff;
+  color: #000;
+}
+
+.feedback-form_label {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+}
+
+.feedback-form_label--select {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.feedback-form_input {
+  background-color: transparent;
+  padding: 10px;
+  border: none;
+  border: 3px solid #fff;
+  outline: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.feedback-form_input:focus {
+  background-color: white;
+  color: #000;
+}
+
+.feedback-form_text {
+  margin: 0;
+}
+
+.message {
+  background-color: transparent;
+  color: #fff;
+  outline: none;
+}
+
+.message:focus {
+  background-color: #fff;
+  color: #000;
+}
+
+.btn {
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: #1d6299;
+  color: #fff;
+}
+
+/* Блок КАРТА */
+
+.map {
+  padding: 0 10px 0 10px;
+  margin-bottom: 50px;
+}
+
+.map__text {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  color: #1d6299;
+}
+
+.maps {
+  border: 2px solid #1d6299;
+}
+
+
+/* Мои достижения   */
+
+.main-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 5px 0 5px;
+}
+
+.wrap-progress {
+  padding-bottom: 100px;
+  animation-name: progress;
+  animation-duration: 3s;
+}
+
+.title {
+  font-size: 30px;
+}
+
+.progress_title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.my-progress {
+  border-radius: 20px;
+  width: fit-content;
+}
+
+.progress-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.my-progress_img {
+  display: block;
+  max-width: 100%;
+  transition: all 1s ease;
+}
+
+.my-progress_img:hover {
+  transform: scale(2);
+}
+
+.my-progress-many {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-top: 70px;
+}
+
+.progress_subtitle--many {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@keyframes progress {
+  0% {
+    margin-left: -1000px;
+  }
+
+  100% {
+    margin-left: 0;
+  }
+}
+
+/* Достижения учеников */
+.student-progress {
+  animation-name: progress;
+  animation-duration: 3s;
+}
+
+.student-progress_title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.student-progress-image {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+@keyframes progress {
+  0% {
+    margin-left: -1000px;
+  }
+
+  100% {
+    margin-left: 0;
+  }
+}
+
+
+/* Тестовые задания */
+
+.test-task-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.test-task {
+  width: 300px;
+  display: flex;
+  flex-direction: column-reverse;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 10px;
+  transition: all .6s ease;
+}
+
+.test-task:hover {
+  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
+  transform: translateY(-5px);
+}
+
+.test-task_link {
+  display: flex;
+  flex-direction: column-reverse;
+  font-size: 20px;
+  color: #99d01e;
+  text-align: center;
+}
+
+.test-task_link:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.test-task_link:hover {
+  color: #e9a778;
+}
+
+.test-task_img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+  order: 1;
+}
+
+/* Страница ВСФК ГГТО */
+
+.vsfkgto {
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 40px;
+}
+
+.vsfkgto-header {
+  text-align: center;
+}
+
+.vsfkgto-header_title {
+  text-transform: uppercase;
+  font-size: 40px;
+  color: red;
+}
+
+.vsfkgto-header img {
+  max-width: 100%;
+}
+
+.vsfkgto-about {
+  margin: 0 auto 50px;
+  max-width: 700px;
+  text-align: justify;
+}
+
+.vsfkgto-gto {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.vsfkgto-gto-link {
+  transition: all .7s ease;
+  width: 200px;
+  max-width: 100%;
+  text-align: center;
+}
+
+.vsfkgto-gto-link img {
+  display: block;
+  margin: 0 auto;
+  transition: all .7s ease;
+}
+
+.vsfkgto-gto-link:hover img {
+  transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+}
+
+.vsfkgto-gto-link:hover a {
+  color: #24679b;
+}
+
+.services-gto {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding-bottom: 30px;
+}
+
+/* Страница УЧЕБНИКИ */
+
+.textbooks {
+  border-radius: 10px;
+  border-top: 3px solid green;
+  border-left: 3px solid green;
+  padding: 10px;
+}
+
+.textbooks_title {
+  margin-left: 100px;
+  font-size: 40px;
+  text-transform: uppercase;
+  color: red;
+}
+
+/* Страница РАБОЧИЕ ПРОГРАММЫ */
+
+.work-programs {
+  border-radius: 10px;
+  border-top: 3px solid green;
+  border-left: 3px solid green;
+  padding: 10px;
+  transition: all .9s ease;
+}
+
+.work-programs:hover {
+  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
+  transform: translateY(-5px);
+}
+
+.work-programs_title {
+  margin-left: 100px;
+  font-size: 40px;
+  text-transform: uppercase;
+  color: #24679b;
+}
+
+.work-program {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.work-program-link {
+  width: 200px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  transition: all .7s ease;
+}
+
+.work-program-link:hover {
+  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
+  transform: translateY(-5px);
+}
+
+.work-program-link img {
+  display: block;
+  margin: 0 auto 20px;
+  width: 100px;
+  height: 100px;
+  max-width: 100%;
+}
+
+.work-program-link:hover img {
+  transform: rotate(90deg);
+}
+
+.work-program-link a {
+  color: #24679b;
+}
+
+
+/* Страница ФОТОГАЛЕРЕЯ */
+
+.photogallery_title {
+  font-size: 40px;
+  text-transform: uppercase;
+  color: #24679b;
+}
+
+.photogallery_img {
+  width: 100%;
+  display: block;
+}
+
+
+/* Медиа запросы */
+
+@media screen and (max-width: 1870px) {
+  .about-foto-desc {
+    max-width: 700px;
+    width: 100%;
+  }
+
+  .about-foto-wrap {
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .services {
+    top: 370px;
+  }
+
+  .about-title {
+    padding: 0 10px 0 10px;
+  }
+
+  .work-programs {
+    max-width: 1150px;
+  }
+
+}
+
+@media screen and (max-width: 1500px) {
+  .wrap-progress {
+    margin-left: 100px;
+  }
+
+  .student-progress {
+    margin-left: 100px;
+  }
+}
+
+@media screen and (max-width: 1399px) {
+  .services {
+    /* display: none; */
+    position: static;
+  }
+
+  .about-foto-wrap {
+    width: auto;
+  }
+
+  .news {
+    margin-left: 50px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .navigation-link {
+    font-size: 18px;
+  }
+
+  .my-progress_img:hover {
+    transform: scale(1.5);
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  .test-task-wrap {
+    justify-content: center;
+  }
+
+  .about-foto-wrap {
+    padding: 0 10px;
+  }
+}
+
+@media screen and (max-width: 1099px) {
+
+  .navigation-list {
+    margin-left: 0;
+    left: 0;
+    gap: 15px;
+  }
+
+  .wrapper {
+    padding: 0 10px 0 10px;
+  }
+
+  .about-foto {
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+  .section-news {
+    padding: 0 10px 0 10px;
+  }
+
+  .news {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .work-programs_title {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+/* тестовой свойство */
+@media screen and (max-width: 1400px) {
+  .services {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: auto;
+    margin-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 927px) {
+  .navigation-list {
+    margin-left: 0;
+    left: 0;
+    gap: 5px;
+  }
+
+  .navigation-link {
+    font-size: 16px;
+  }
+
+  .navigation-link_dropper {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .news {
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto 20px;
+    padding-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 785px) {
+  .about {
+    height: 200px;
+  }
+
+  .navigation-list:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .about-title {
+    right: 0;
+  }
+
+  .news {
+    gap: 20px;
+  }
+
+  .wrapper {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .about-foto-wrap {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .about-foto_title {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-title {
+    font-size: 16px;
+  }
+
+  .news {
+    gap: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .vsfkgto-gto {
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .student-progress-image {
+    justify-content: center;
+  }
 }
