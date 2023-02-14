@@ -504,6 +504,14 @@ a {
   }
 }
 
+
+
+/* Наглядные пособия */
+
+.material {
+  padding-bottom: 50px;
+}
+
 .material__title {
   font-size: 48px;
   text-align: center;
