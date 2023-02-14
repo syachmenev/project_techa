@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -233,9 +234,42 @@
     </nav>
   </header>
   <main class="main-inner">
-    <section class="developer" s>
-      <h1>"Это страница в разработке. Просим извенения"</h1>
-      <div><img src="images/vrazrabonki.png" width="300" height="300" alt=""></div>
+    <section class="material">
+      <h1 class="material__title">Наглядный материал</h1>
+      <div class="material-basket">
+        <h2 class="material__subtitle">
+          Баскетбол
+        </h2>
+        <div class="material-basket-wrap">
+
+          <a data-fancybox="gallery" data-src="images/skhema-koltsa.jpg" data-width="640" data-height="480">
+            <img src="images/skhema-koltsa.jpg" />
+          </a>
+
+          <a data-fancybox="gallery" data-src="images/skhema2basket.jpg" data-width="640" data-height="480">
+            <img src="images/skhema2basket.jpg" />
+          </a>
+
+          <a data-fancybox="gallery" data-src="images/skhema3basket.jpg" data-width="640" data-height="480">
+            <img src="images/skhema3basket.jpg" />
+          </a>
+
+          <a data-fancybox="gallery" data-src="images/skhema4basket.jpg" data-width="640" data-height="480">
+            <img src="images/skhema4basket.jpg" />
+          </a>
+
+          <a width="500" data-fancybox="gallery" data-src="images/skhema5basket..jpg" data-width="640"
+            data-height="480">
+            <img src="images/skhema5basket..jpg" />
+          </a>
+
+          <a data-fancybox="gallery" data-src="images/skhema6basket.jpg" data-width="640" data-height="480">
+            <img src="images/skhema6basket.jpg" />
+          </a>
+
+        </div>
+      </div>
+
     </section>
     <div class="services">
       <a class="services-link" href="https://edu.gov.ru" target="_blank">
@@ -266,6 +300,17 @@
       </a>
     </div>
   </main>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <script>
+    // Customization example
+    Fancybox.bind('[data-fancybox="gallery"]', {
+      infinite: false,
+      width: 500
+    });
+  </script>
 </body>
 
 </html>

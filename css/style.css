@@ -504,6 +504,37 @@ a {
   }
 }
 
+.material__title {
+  font-size: 48px;
+  text-align: center;
+  animation-name: material;
+  animation-duration: 13s;
+}
+
+.material__subtitle {
+  font-size: 27px;
+  text-align: center;
+  animation-name: material;
+  animation-duration: 16s;
+}
+
+@keyframes material {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.material-basket-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: flex-start;
+}
+
 
 /* Тестовые задания */
 
