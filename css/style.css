@@ -504,6 +504,78 @@ a {
   }
 }
 
+/* Спойлер */
+.physical-material-spoiler {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.spoiler {
+  max-width: 600px;
+
+  border-radius: 10px;
+}
+
+.spoiler__header {
+  max-width: 600px;
+}
+
+.spoiler__label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  width: 100%;
+  border: 2px solid #ccc;
+  background-color: #f0f0f0;
+  transition: all 0.7s ease;
+  cursor: pointer;
+}
+
+.spoiler__label:hover {
+  background-color: #cac1c1;
+}
+
+
+
+.spoiler .spoiler__input,
+.spoiler .spoiler__body {
+  display: none;
+}
+
+.spoiler :checked~.spoiler__body {
+  display: block;
+}
+
+.label-icon {
+  background-image: url(../images/arrows.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.spoiler :checked+.spoiler__label .label-icon {
+  background-image: url(../images/arrows.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  display: block;
+  transform: rotate(180deg);
+}
+
+.spoiler__desc {
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
 
 
 /* Наглядные пособия */
